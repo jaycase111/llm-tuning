@@ -1,0 +1,11 @@
+pyyaml
+transformers
+peft
+adapters
+deepspeed
+deepspeed-chat
+awq
+llm-awq
+auto-gptq
+squeezellm
+pippy

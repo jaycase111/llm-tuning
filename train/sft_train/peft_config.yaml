@@ -1,0 +1,7 @@
+name: lora
+config:
+  task_type: causal_lm
+  r: 8
+  lora_alpha: 0.3
+  lora_dropout: 0.2
+  target_modules: ["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"]

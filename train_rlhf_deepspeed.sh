@@ -1,0 +1,31 @@
+deepspeed --include="localhost:0,1,2,3" deepspeed_train_rlhf.py \
+   --data_file corpus/reward/train_final.json \
+   --actor_model_name_or_path /data01/zhangchao/openchat_35 \
+   --critic_model_name_or_path /data01/zhangchao/reward \
+   --num_padding_at_beginning 1 \
+   --per_device_generation_batch_size 1 \
+   --per_device_training_batch_size 1 \
+   --generation_batches 1 \
+   --ppo_epochs 1 \
+   --max_answer_seq_len 16 \
+   --max_prompt_seq_len 32 \
+   --actor_weight_decay 0.1 \
+   --critic_weight_decay 0.1 \
+   --num_train_epochs 1 \
+   --lr_scheduler_type cosine \
+   --gradient_accumulation_steps 1 \
+   --actor_gradient_checkpointing \
+   --critic_gradient_checkpointing \
+   --offload_reference_model \
+   --offload \
+   --actor_dropout 0.0 \
+   --num_warmup_steps 100 \
+   --deepspeed --seed 1234 \
+   --actor_zero_stage 3 \
+   --critic_zero_stage 3 \
+   --actor_lora_dim 64 \
+   --critic_lora_dim 64 \
+   --critic_lora_module_name "layers." \
+   --actor_lora_module_name "layers." \
+   --output_dir /data01/zhangchao/rlhf  \
+    &> ./training.log

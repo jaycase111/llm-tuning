@@ -1,0 +1,1 @@
+deepspeed  --include="localhost:2" deepspeed_train_reward.py --model /data01/zhangchao/Ziya-LLaMA-7B-Reward  --peft_file /home/duser/zhangchao_workspace/llm-tuning/train/sft_train/peft_config.yaml --deepspeed_config /home/duser/zhangchao_workspace/llm-tuning/train/sft_train/deepspeed_zero1.json --train_file corpus/reward/smile.json

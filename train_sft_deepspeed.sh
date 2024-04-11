@@ -1,0 +1,1 @@
+deepspeed  --include="localhost:2" deepspeed_train_sft.py --model /data01/zhangchao/glm --peft_file /home/duser/zhangchao_workspace/llm-tuning/train/sft_train/peft_config.yaml --deepspeed_config /home/duser/zhangchao_workspace/llm-tuning/train/sft_train/deepspeed_zero1.json --train_file corpus/sft/smile.json
